@@ -1,40 +1,72 @@
 body {
+  background-color: #333;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-a {
-  text-decoration: none;
-  color: tomato;
-  font-family: sans-serif;
-  font-size: 45px;
-  border: 5px solid tomato;
-  padding: 40px 80px;
-  position: relative;
-  transition: all 0.5s;
-  overflow: hidden;
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-a:hover {
+ul li {
+  position: relative;
+  list-style: none;
+  margin: 5px;
+}
+
+a {
+  position: relative;
+  display: block;
+  height: 40px;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  border: 1px solid black;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+ul li a span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
   color: white;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+a:hover span:nth-child(1) {
+  transform: translateY(-100%);
+}
+
+a:hover span:nth-child(2) {
+  transition-delay: 0.2s;
+  transform: translateY(-100%);
 }
 
 a::before {
   content: "";
-  background-color: tomato;
-  width: 100%;
-  height: 100%;
   position: absolute;
   left: 0;
-  top: -150%;
-  z-index: -1;
-  transition: all 0.5s;
-  border-radius: 0 0 50% 50%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: aquamarine;
+  transition: 0.5s;
+  transform: scaleX(0);
 }
 
 a:hover::before {
-  top: 0;
-  height: 190%;
+  transition-delay: 0.5s;
+  transform: scaleX(1);
 }
