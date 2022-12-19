@@ -1,0 +1,95 @@
+body {
+  background-color: rgb(36, 36, 149);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform: rotate(45deg);
+  animation: scaleBox 1.5s infinite;
+}
+
+span {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: rotating 1.5s infinite;
+}
+
+.loading > span:nth-child(1) {
+  background-color: rgb(246, 85, 85);
+  left: 0;
+  top: 0;
+}
+
+.loading > span:nth-child(2) {
+  background-color: rgb(85, 246, 147);
+  right: 0;
+  top: 0;
+}
+
+.loading > span:nth-child(3) {
+  background-color: rgb(233, 250, 194);
+  left: 0;
+  bottom: 0;
+}
+
+.loading > span:nth-child(4) {
+  background-color: rgb(101, 114, 234);
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes scaleBox {
+  0% {
+    width: 100px;
+    height: 100px;
+  }
+
+  10% {
+    width: 100px;
+    height: 100px;
+  }
+
+  50% {
+    width: 150px;
+    height: 150px;
+  }
+
+  90% {
+    width: 100px;
+    height: 100px;
+  }
+
+  100% {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(0deg);
+  }
+
+  /* 50% {
+    transform: rotate(90deg);
+  } */
+
+  50% {
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
